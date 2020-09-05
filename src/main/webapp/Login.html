@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>BoA Login</title>
+	<link rel="stylesheet" href="file:///Users/MasterKashani/Documents/FinalProjectV1/src/main/webapp/first.css" type="text/css"/>
+</head>
+<body>
+	<div>
+		<h1>Welcome to Bank of Arya Login Page</h1>
+		<form action="/FinalProjectV1/api/createAccountPage" method="post">
+			<input type = "submit" value = "Create Account">
+		</form>
+		<form action = "/FinalProjectV1/api/login" method = "post">
+			<input type = "text" name = "user" placeholder="Username">
+			<input type = "password" name = "pass" placeholder="Password">
+			<input type = "submit" value="Login!">
+		</form>
+	</div>
+</body>
+</html>
