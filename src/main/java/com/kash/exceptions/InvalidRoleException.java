@@ -1,4 +1,4 @@
-package com.kash.exceptions;
+package main.java.com.kash.exceptions;
 
 public class InvalidRoleException  extends Exception {
 

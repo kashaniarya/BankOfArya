@@ -1,6 +1,6 @@
-package com.kash.models;
+package main.java.com.kash.models;
 
-import com.kash.exceptions.InvalidRoleException;
+import main.java.com.kash.exceptions.InvalidRoleException;
 
 public class Role {
 	private int roleId; // primary key

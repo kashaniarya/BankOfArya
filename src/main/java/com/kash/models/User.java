@@ -1,9 +1,11 @@
-package com.kash.models;
+package main.java.com.kash.models;
+
+import main.java.com.kash.exceptions.InvalidRoleException;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.kash.exceptions.InvalidRoleException;
+
 
 public class User {
 	private int userId; // primary key

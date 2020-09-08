@@ -1,4 +1,4 @@
-package com.kash.dao;
+package main.java.com.kash.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

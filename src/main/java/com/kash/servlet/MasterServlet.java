@@ -1,4 +1,7 @@
-package com.kash.servlet;
+package main.java.com.kash.servlet;
+
+import main.java.com.kash.controllers.RequestHelper;
+import main.java.com.kash.exceptions.*;
 
 import java.io.IOException;
 
@@ -7,8 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kash.controllers.RequestHelper;
-import com.kash.exceptions.InvalidRoleException;
+
 
 
 public class MasterServlet extends HttpServlet {

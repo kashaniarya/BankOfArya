@@ -1,4 +1,6 @@
-package com.kash.controllers;
+package main.java.com.kash.controllers;
+
+import main.java.com.kash.exceptions.InvalidRoleException;
 
 import java.io.IOException;
 
@@ -6,7 +8,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.kash.exceptions.InvalidRoleException;
 
 
 
@@ -145,7 +146,6 @@ public static void process(HttpServletRequest request, HttpServletResponse respo
 				break;
 	
 			default:
-				//System.out.println("NO I BET IT HITS HERE");
 				HomeController.getLoginPage(request,response);
 				break;
 			

@@ -10,10 +10,10 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   
-   <servlet>
+  <servlet>
     <display-name>MasterServlet</display-name>
     <servlet-name>MasterServlet</servlet-name>
-    <servlet-class>com.kash.servlet.MasterServlet</servlet-class> 
+    <servlet-class>main.java.com.kash.servlet.MasterServlet</servlet-class> 
   </servlet>
   
   <servlet-mapping>

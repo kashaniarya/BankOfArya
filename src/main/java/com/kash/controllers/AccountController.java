@@ -1,14 +1,17 @@
-package com.kash.controllers;
+package main.java.com.kash.controllers;
 
-import java.io.IOException;
+import main.java.com.kash.models.*;
+import main.java.com.kash.dao.*;
+
+
+
+import java.io.IOException; 
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.kash.dao.BankDao;
-import com.kash.dao.BankDaoImpl;
-import com.kash.models.Account;
+
 
 public class AccountController {
 	

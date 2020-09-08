@@ -1,4 +1,4 @@
-package com.kash.models;
+package main.java.com.kash.models;
 
 public class Account {
 	private int accountId; // primary key

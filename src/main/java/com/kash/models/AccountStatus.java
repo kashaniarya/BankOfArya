@@ -1,6 +1,6 @@
-package com.kash.models;
+package main.java.com.kash.models;
 
-import com.kash.exceptions.InvalidAccountStatusException;
+import main.java.com.kash.exceptions.InvalidAccountStatusException;
 
 public class AccountStatus {
 	private int statusId; // primary key

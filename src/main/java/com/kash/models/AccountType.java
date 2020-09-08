@@ -1,6 +1,6 @@
-package com.kash.models;
+package main.java.com.kash.models;
 
-import com.kash.exceptions.InvalidAccountTypeException;
+import main.java.com.kash.exceptions.InvalidAccountTypeException;
 
 public class AccountType {
 	private int typeId; // primary key

@@ -1,4 +1,10 @@
-package com.kash.dao;
+package main.java.com.kash.dao;
+
+import main.java.com.kash.models.User;
+import main.java.com.kash.models.Role;
+import main.java.com.kash.models.Account;
+import main.java.com.kash.models.AccountStatus;
+import main.java.com.kash.models.AccountType;
 
 import java.sql.Array;
 import java.sql.Connection;
@@ -8,11 +14,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.kash.models.User;
-import com.kash.models.Account;
-import com.kash.models.AccountStatus;
-import com.kash.models.AccountType;
-import com.kash.models.Role;
+
 
 public class BankDaoImpl implements BankDao {
 
@@ -293,15 +295,15 @@ public class BankDaoImpl implements BankDao {
 //		System.out.println(b.readAllUsersAccounts(u));
 //	}
 	
-	public static void main(String[] args) {
-		
-		BankDao b = new BankDaoImpl();
-		//System.out.println(b.readAllUsersAccounts("kashaniarya"));
-		List<User> users = b.getAllUsers();
-		for (int i=0; i < users.size(); i++ ) {
-			System.out.println(users.get(i));
-		}
-	}
+//	public static void main(String[] args) {
+//		
+//		BankDao b = new BankDaoImpl();
+//		//System.out.println(b.readAllUsersAccounts("kashaniarya"));
+//		List<User> users = b.getAllUsers();
+//		for (int i=0; i < users.size(); i++ ) {
+//			System.out.println(users.get(i));
+//		}
+//	}
 
 	@Override
 	public boolean updateAccountBalance(Double new_balance, int id) {

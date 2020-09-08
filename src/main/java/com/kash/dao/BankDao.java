@@ -1,10 +1,12 @@
-package com.kash.dao;
+package main.java.com.kash.dao;
+
+import main.java.com.kash.models.User;
+
 
 import java.util.List;
 
-import com.kash.models.Account;
-import com.kash.models.User;
 
+import main.java.com.kash.models.Account;
 public interface BankDao {
 	
 	public boolean insertUser(User u);
@@ -17,7 +19,6 @@ public interface BankDao {
 	
 	public Account getAccountById(int id);
 	
-	//public int getCountForAllAccountsDB();
 	
 	public boolean updateAccountBalance(Double new_balance, int id);
 	
