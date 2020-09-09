@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>BoA Open Account</title>
+	<link rel="stylesheet" href="file:///Users/MasterKashani/Documents/FinalProjectV1/src/main/webapp/first.css" type="text/css"/>
+</head>
+<body>
+	<div>
+		<h1>CHECKING  OR  SAVINGS</h1>
+		<form action="/FinalProjectV1/api/home" method="post">
+			<input type="submit" value="Back">
+		</form>
+		<br>
+		<h2>Create new Checking Account here:</h2>
+		<form action="/FinalProjectV1/api/createNewAccountChecking" method="post">
+			<input type="text" name="balance" placeholder="Initial Deposit">
+			<input type="text" value="Checking" readonly>
+			<input type="submit" value="Apply for Checking">
+		</form>
+		<br>
+		<h2>Create new Savings Account here:</h2>
+		<form action="/FinalProjectV1/api/createNewAccountSavings" method="post">
+			<input type="text" name="balance" placeholder="Initial Deposit">
+			<input type="text" value="Savings" readonly>
+			<input type="submit" value="Apply for Savings">
+		</form>
+	</div>
+</body>
+</html>

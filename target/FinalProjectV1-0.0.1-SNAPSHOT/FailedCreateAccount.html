@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>BoA Create Account</title>
+	<link rel="stylesheet" href="file:///Users/MasterKashani/Documents/FinalProjectV1/src/main/webapp/first.css" type="text/css"/>
+</head>
+<body>
+	<div>
+		<h1>Welcome to Bank of Arya!</h1>
+		<p>Failed to create account. Try again.</p>
+		<h2>Create Account below:</h2>
+		<form action="/FinalProjectV1/api/create" method="post">
+			<input type = "text" name = "user" placeholder="Username"><br>
+			<input type = "password" name = "pass" placeholder="Password"><br>
+			<input type = "text" name = "fname" placeholder="First Name"><br>
+			<input type = "text" name = "lname" placeholder="Last Name"><br>
+			<input type = "text" name = "email" placeholder="Email"><br>
+			<input type = "submit" value="Create!">
+		</form>
+		<form action="/FinalProjectV1/api/" method="post">
+			<input type="submit" value="Back">
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>BoA Admin Home</title>
+	<link rel="stylesheet" href="file:///Users/MasterKashani/Documents/FinalProjectV1/src/main/webapp/first.css" type="text/css"/>
+</head>
+<body>
+	<div>
+		<h1>Welcome to BoA Admin and Employee Homepage</h1>
+		<br>
+		<form action="/FinalProjectV1/api/logout" method="get">
+			<button type="submit">Logout</button>
+		</form>
+		<br>
+		<br>
+		<form action="/FinalProjectV1/api/showAllUsersAndAccounts" method="get">
+			<button type="submit">Show All Users and Accounts</button>
+		</form>
+		<br>
+		<br>
+		<form action="/FinalProjectV1/api/showAllUsers" method="get">
+			<button type="submit">All Users</button>
+		</form>
+		<br>
+		<form action="/FinalProjectV1/api/showUserById" method="get">
+			<button type="submit">User By Id</button>
+			<input type="text" name="uid" placeholder="user id">
+		</form>
+		<br>
+		<br>
+		<br>
+		<form action="/FinalProjectV1/api/showAllAccounts" method="get">
+			<button type="submit">All Accounts</button>
+		</form>
+		<br>
+		<form action="/FinalProjectV1/api/showAccountById" method="get">
+			<button type="submit">Account By ID</button>
+			<input type="text" name="account_id" placeholder="account id">
+		</form>
+		<br>
+		<form action="/FinalProjectV1/api/showAccountByUsername" method="get">
+			<button type="submit">Account By Username</button>
+			<input type="text" name="username" placeholder="username">
+		</form>
+		<br>
+		<form action="/FinalProjectV1/api/showAccountByType" method="get">
+			<button type="submit">Account By Type</button>
+			<input type="text" name="type" placeholder="account type">
+		</form>
+		<br>
+		<form action="/FinalProjectV1/api/showAccountByStatus" method="get">
+			<button type="submit">Account By Status</button>
+			<input type="text" name="status" placeholder="account status">
+		</form>
+	</div>
+</body>
+</html>
