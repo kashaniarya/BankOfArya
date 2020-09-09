@@ -5,8 +5,9 @@ import main.java.com.kash.dao.*;
 
 
 
-import java.io.IOException; 
+import java.io.IOException;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,9 +17,10 @@ import javax.servlet.http.HttpSession;
 public class AccountController {
 	
 
-	public static void deposit(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public static void deposit(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
 		else {
 			try {
@@ -57,9 +59,10 @@ public class AccountController {
 		}
 	}
 	
-	public static void withdraw(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public static void withdraw(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
 		else {
 			try {
@@ -98,9 +101,10 @@ public class AccountController {
 		}
 	}
 	
-	public static void transfer(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public static void transfer(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
 		else {
 			try {
@@ -155,9 +159,10 @@ public class AccountController {
 		}
 	}
 	
-	public static void close(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public static void close(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
 		else {
 //			System.out.println(request.getParameter("accnum"));
@@ -187,21 +192,23 @@ public class AccountController {
 		}
 	}
 	
-	public static void errorPage(HttpServletRequest request, HttpServletResponse response, String errorMsg) throws IOException {
+	public static void errorPage(HttpServletRequest request, HttpServletResponse response, String errorMsg) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
+		
 		else {
 			//String html_string = "<div>";
 			
 			String html_string = "<head>" + 
 					"<title>BoA e-Page</title>" + 
-					"<link rel=\"stylesheet\" href=\"file:///Users/MasterKashani/Documents/FinalProjectV1/src/main/webapp/first.css\" type=\"text/css\"/>" + 
+					AdminController.styleCss() +
 					"</head>" + 
 					"<body>"
 					+ "<div>";
 			
-			html_string = html_string + "<form action=\"/FinalProjectV1/api/home\" method=\"post\">"
+			html_string = html_string + "<form action=\"/api/home\" method=\"post\">"
 					+ "<input type=\"submit\" value=\"Home\">"
 					+ "</form>";
 			

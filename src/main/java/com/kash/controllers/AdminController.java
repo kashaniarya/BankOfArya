@@ -16,7 +16,8 @@ public class AdminController {
 	
 	public static void getAdminHomePage(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
 		else {
 			
@@ -39,7 +40,8 @@ public class AdminController {
 	
 	public static void showAllUsersAndAccounts(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
 		else {
 			BankDao bank = new BankDaoImpl();
@@ -49,12 +51,12 @@ public class AdminController {
 			
 			String html_string = "<head>" + 
 					"<title>BoA Show All</title>" + 
-					"<link rel=\"stylesheet\" href=\"file:///Users/MasterKashani/Documents/FinalProjectV1/src/main/webapp/first.css\" type=\"text/css\"/>" + 
+					styleCss() +
 					"</head>" + 
 					"<body>"
 					+ "<div>";
 			
-			html_string = html_string + "<form action=\"/FinalProjectV1/api/getAdminHomePage\" method=\"get\">"
+			html_string = html_string + "<form action=\"/api/getAdminHomePage\" method=\"get\">"
 					+ "<input type=\"submit\" value=\"Back\">"
 					+ "</form><br>";
 			
@@ -69,7 +71,7 @@ public class AdminController {
 				String role = u.getRole().getRole();
 				List<Account> users_accounts = bank.readAllUsersAccounts(username);
 			
-				html_string = html_string + "<form name=\"user\" action=\"/FinalProjectV1/api/adminUpdateUser\" method\"post\">"
+				html_string = html_string + "<form name=\"user\" action=\"/api/adminUpdateUser\" method\"post\">"
 						+ "<input type=\"text\" value=\"USER: \" readonly>"
 						+ "<input type=\"text\" name = \"user_id\" value=\""+ user_id + "\" readonly>"
 						+ "<input type=\"text\" name = \"username\" value=\""+username+"\">"
@@ -86,7 +88,7 @@ public class AdminController {
 					String acc_status = ua.getStatus().getStatus();
 					String acc_type = ua.getType().getType();
 					
-					html_string = html_string + "<form name=\"acc\" action=\"/FinalProjectV1/api/adminUpdateAccount\" method\"post\">"
+					html_string = html_string + "<form name=\"acc\" action=\"/api/adminUpdateAccount\" method\"post\">"
 							+ "<input type=\"text\" value=\"ACCOUNT: \" readonly>"
 							+ "<input type=\"text\" name = \"account_id\" value=\""+ account_id + "\" readonly>"
 							+ "<input type=\"text\" name = \"balance\" value=\""+balance+"\">"
@@ -107,7 +109,8 @@ public class AdminController {
 	
 	public static void adminUpdateUser(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
 		else {
 			HttpSession session = request.getSession();
@@ -156,7 +159,8 @@ public class AdminController {
 	
 	public static void adminUpdateAccount(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
 		else {
 			HttpSession session = request.getSession();
@@ -209,7 +213,8 @@ public class AdminController {
 	
 	public static void showAllAccounts(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
 		else {
 			BankDao bank = new BankDaoImpl();
@@ -219,12 +224,12 @@ public class AdminController {
 			
 			String html_string = "<head>" + 
 					"<title>BoA All Accounts</title>" + 
-					"<link rel=\"stylesheet\" href=\"file:///Users/MasterKashani/Documents/FinalProjectV1/src/main/webapp/first.css\" type=\"text/css\"/>" + 
+					styleCss() +
 					"</head>" + 
 					"<body>"
 					+ "<div>";
 			
-			html_string = html_string + "<form action=\"/FinalProjectV1/api/getAdminHomePage\" method=\"get\">"
+			html_string = html_string + "<form action=\"/api/getAdminHomePage\" method=\"get\">"
 					+ "<input type=\"submit\" value=\"Back\">"
 					+ "</form><br>";
 			
@@ -244,7 +249,7 @@ public class AdminController {
 					String acc_status = ua.getStatus().getStatus();
 					String acc_type = ua.getType().getType();
 					
-					html_string = html_string + "<form name=\"acc\" action=\"/FinalProjectV1/api/adminUpdateAccount\" method\"post\">"
+					html_string = html_string + "<form name=\"acc\" action=\"/api/adminUpdateAccount\" method\"post\">"
 							+ "<input type=\"text\" value=\"User id #: "+user_id+"\" readonly>"
 							+ "<input type=\"text\" value=\""+username+"\" readonly>"
 							+ "<input type=\"text\" name = \"account_id\" value=\""+ account_id + "\" readonly>"
@@ -266,7 +271,8 @@ public class AdminController {
 	
 	public static void showAllUsers(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
 		else {
 			BankDao bank = new BankDaoImpl();
@@ -276,12 +282,12 @@ public class AdminController {
 			
 			String html_string = "<head>" + 
 					"<title>BoA All Users</title>" + 
-					"<link rel=\"stylesheet\" href=\"file:///Users/MasterKashani/Documents/FinalProjectV1/src/main/webapp/first.css\" type=\"text/css\"/>" + 
+					styleCss() + 
 					"</head>" + 
 					"<body>"
 					+ "<div>";
 			
-			html_string = html_string + "<form action=\"/FinalProjectV1/api/getAdminHomePage\" method=\"get\">"
+			html_string = html_string + "<form action=\"/api/getAdminHomePage\" method=\"get\">"
 					+ "<input type=\"submit\" value=\"Back\">"
 					+ "</form><br>";
 			
@@ -295,7 +301,7 @@ public class AdminController {
 				String email = u.getEmail();
 				String role = u.getRole().getRole();
 			
-				html_string = html_string + "<form name=\"user\" action=\"/FinalProjectV1/api/adminUpdateUser\" method\"post\">"
+				html_string = html_string + "<form name=\"user\" action=\"/api/adminUpdateUser\" method\"post\">"
 						+ "<input type=\"text\" value=\"USER: \" readonly>"
 						+ "<input type=\"text\" name = \"user_id\" value=\""+ user_id + "\" readonly>"
 						+ "<input type=\"text\" name = \"username\" value=\""+username+"\">"
@@ -318,7 +324,8 @@ public class AdminController {
 	
 	public static void showUserById(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
 		else {
 			try {
@@ -333,12 +340,12 @@ public class AdminController {
 				
 				String html_string = "<head>" + 
 						"<title>BoA User by ID</title>" + 
-						"<link rel=\"stylesheet\" href=\"file:///Users/MasterKashani/Documents/FinalProjectV1/src/main/webapp/first.css\" type=\"text/css\"/>" + 
+						styleCss() +
 						"</head>" + 
 						"<body>"
 						+ "<div>";
 				
-				html_string = html_string + "<form action=\"/FinalProjectV1/api/getAdminHomePage\" method=\"get\">"
+				html_string = html_string + "<form action=\"/api/getAdminHomePage\" method=\"get\">"
 						+ "<input type=\"submit\" value=\"Back\">"
 						+ "</form><br>";
 				
@@ -354,7 +361,7 @@ public class AdminController {
 				
 				List<Account> users_accounts = bank.readAllUsersAccounts(username);
 			
-				html_string = html_string + "<form name=\"user\" action=\"/FinalProjectV1/api/adminUpdateUser\" method\"post\">"
+				html_string = html_string + "<form name=\"user\" action=\"/api/adminUpdateUser\" method\"post\">"
 						+ "<input type=\"text\" value=\"USER: \" readonly>"
 						+ "<input type=\"text\" name = \"user_id\" value=\""+ user_id + "\" readonly>"
 						+ "<input type=\"text\" name = \"username\" value=\""+username+"\">"
@@ -371,7 +378,7 @@ public class AdminController {
 					String acc_status = ua.getStatus().getStatus();
 					String acc_type = ua.getType().getType();
 					
-					html_string = html_string + "<form name=\"acc\" action=\"/FinalProjectV1/api/adminUpdateAccount\" method\"post\">"
+					html_string = html_string + "<form name=\"acc\" action=\"/api/adminUpdateAccount\" method\"post\">"
 							+ "<input type=\"text\" value=\"ACCOUNT: \" readonly>"
 							+ "<input type=\"text\" name = \"account_id\" value=\""+ account_id + "\" readonly>"
 							+ "<input type=\"text\" name = \"balance\" value=\""+balance+"\">"
@@ -395,7 +402,8 @@ public class AdminController {
 	
 	public static void showAccountById(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
 		else {
 			try {
@@ -414,16 +422,16 @@ public class AdminController {
 				
 				String html_string = "<head>" + 
 						"<title>BoA Account by ID</title>" + 
-						"<link rel=\"stylesheet\" href=\"file:///Users/MasterKashani/Documents/FinalProjectV1/src/main/webapp/first.css\" type=\"text/css\"/>" + 
+						styleCss() +
 						"</head>" + 
 						"<body>"
 						+ "<div>";
 				
-				html_string = html_string + "<form action=\"/FinalProjectV1/api/getAdminHomePage\" method=\"get\">"
+				html_string = html_string + "<form action=\"/api/getAdminHomePage\" method=\"get\">"
 						+ "<input type=\"submit\" value=\"Back\">"
 						+ "</form><br>";
 				
-				html_string = html_string + "<form name=\"acc\" action=\"/FinalProjectV1/api/adminUpdateAccount\" method\"post\">"
+				html_string = html_string + "<form name=\"acc\" action=\"/api/adminUpdateAccount\" method\"post\">"
 						+ "<input type=\"text\" value=\"ACCOUNT: \" readonly>"
 						+ "<input type=\"text\" name = \"account_id\" value=\""+ account_id + "\" readonly>"
 						+ "<input type=\"text\" name = \"balance\" value=\""+balance+"\">"
@@ -444,7 +452,8 @@ public class AdminController {
 	
 	public static void showAccountByUsername(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
 		else {
 			try {
@@ -459,37 +468,23 @@ public class AdminController {
 				
 				String html_string = "<head>" + 
 						"<title>BoA Account by Username</title>" + 
-						"<link rel=\"stylesheet\" href=\"file:///Users/MasterKashani/Documents/FinalProjectV1/src/main/webapp/first.css\" type=\"text/css\"/>" + 
+						styleCss() +
 						"</head>" + 
 						"<body>"
 						+ "<div>";
 				
-				html_string = html_string + "<form action=\"/FinalProjectV1/api/getAdminHomePage\" method=\"get\">"
+				html_string = html_string + "<form action=\"/api/getAdminHomePage\" method=\"get\">"
 						+ "<input type=\"submit\" value=\"Back\">"
 						+ "</form><br>";
 				
 				
 				
 					
-//				int user_id = u.getID();
-//				String username = u.getUsername();
-//				String firstName = u.getFirstname();
-//				String lastName = u.getLastname();
-//				String email = u.getEmail();
-//				String role = u.getRole().getRole();
+
 				
 				List<Account> users_accounts = bank.readAllUsersAccounts(username);
 			
-//				html_string = html_string + "<form action=\"/FinalProjectV1/api/adminUpdateUser\" method\"post\">"
-//						+ "<input type=\"text\" value=\"USER: \" readonly>"
-//						+ "<input type=\"text\" name = \"user_id\" value=\""+ user_id + "\" readonly>"
-//						+ "<input type=\"text\" name = \"username\" value=\""+username+"\">"
-//						+ "<input type=\"text\" name = \"firstName\" value=\""+firstName+"\">"
-//						+ "<input type=\"text\" name = \"lastName\" value=\""+lastName+"\">"
-//						+ "<input type=\"text\" name = \"email\" value=\""+email+"\">"
-//						+ "<input type=\"text\" name = \"role\" value=\""+role+"\">"
-//						+ "<input type=\"submit\" value=\"Update User\">"
-//						+ "</form>";
+
 					
 				for (Account ua : users_accounts) {
 					int account_id = ua.getID();
@@ -497,7 +492,7 @@ public class AdminController {
 					String acc_status = ua.getStatus().getStatus();
 					String acc_type = ua.getType().getType();
 					
-					html_string = html_string + "<form name=\"acc\" action=\"/FinalProjectV1/api/adminUpdateAccount\" method\"post\">"
+					html_string = html_string + "<form name=\"acc\" action=\"/api/adminUpdateAccount\" method\"post\">"
 							+ "<input type=\"text\" value=\"ACCOUNT: \" readonly>"
 							+ "<input type=\"text\" name = \"account_id\" value=\""+ account_id + "\" readonly>"
 							+ "<input type=\"text\" name = \"balance\" value=\""+balance+"\">"
@@ -519,10 +514,56 @@ public class AdminController {
 		}
 	}
 	
+	public static String styleCss() {
+		return "<style type=\"text/css\">"
+				+ "@charset \"UTF-8\";"
+				+ "*{" + 
+				"padding: 5px; border: 10px; margin: 2px; " + 
+				"box-sizing: border-box;" + 
+				"list-style-type: none; " + 
+				"text-decoration: none;" + 
+				"color: black;" + 
+				"overflow: auto;" + 
+				"}"
+				+ "body{" + 
+				"background-color: rgb(100,0,10);" + 
+				"overflow: hidden;" + 
+				"}" + 
+				"input {" + 
+				"height: 30px;" + 
+				"wdith: 80px;" + 
+				"border-width: 3px;\n" + 
+				"border-style: solid;\n" + 
+				"border-color: rgb(200,0,0);" + 
+				"	}" + 
+				"button {" + 
+				"height: 30px;" + 
+				"wdith: 80px;\n" + 
+				"border-width: 3px;" + 
+				"border-style: solid;" + 
+				"border-color: rgb(200,0,0);" + 
+				"		}" + 
+				"form[name=\"user\"] {" + 
+				"border-width: 5px;" + 
+				"border-style: solid;" + 
+				"border-color: rgb(0,0,100);" + 
+				"}" + 
+				"form[name=\"acc\"] {" + 
+				"border-width: 5px;" + 
+				"border-style: solid;" + 
+				"border-color: rgb(0,100,0);" + 
+				"}" + 
+				"h1 {" + 
+				"background-color: blue;" + 
+				"}"
+				+ "</style>";
+	}
+	
 	
 	public static void showAccountByType(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
 		else {
 			try {
@@ -538,13 +579,13 @@ public class AdminController {
 					
 					String html_string = "<head>" + 
 							"<title>BoA Account By Type</title>" + 
-							"<link rel=\"stylesheet\" href=\"file:///Users/MasterKashani/Documents/FinalProjectV1/src/main/webapp/first.css\" type=\"text/css\"/>" + 
+							styleCss() +
 							"</head>" + 
 							"<body>"
 							+ "<div>";
 					
 					
-					html_string = html_string + "<form action=\"/FinalProjectV1/api/getAdminHomePage\" method=\"get\">"
+					html_string = html_string + "<form action=\"/api/getAdminHomePage\" method=\"get\">"
 							+ "<input type=\"submit\" value=\"Back\">"
 							+ "</form><br>";
 					
@@ -554,7 +595,7 @@ public class AdminController {
 						String acc_status = ua.getStatus().getStatus();
 						String acc_type = ua.getType().getType();
 						
-						html_string = html_string + "<form name=\"acc\" action=\"/FinalProjectV1/api/adminUpdateAccount\" method\"post\">"
+						html_string = html_string + "<form name=\"acc\" action=\"/api/adminUpdateAccount\" method\"post\">"
 								+ "<input type=\"text\" value=\"ACCOUNT: \" readonly>"
 								+ "<input type=\"text\" name = \"account_id\" value=\""+ account_id + "\" readonly>"
 								+ "<input type=\"text\" name = \"balance\" value=\""+balance+"\">"
@@ -577,7 +618,8 @@ public class AdminController {
 	
 	public static void showAccountByStatus(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
 		else {
 			try {
@@ -593,12 +635,12 @@ public class AdminController {
 					
 					String html_string = "<head>" + 
 							"<title>BoA Account By Status</title>" + 
-							"<link rel=\"stylesheet\" href=\"file:///Users/MasterKashani/Documents/FinalProjectV1/src/main/webapp/first.css\" type=\"text/css\"/>" + 
+							styleCss() +
 							"</head>" + 
 							"<body>"
 							+ "<div>";
 					
-					html_string = html_string + "<form action=\"/FinalProjectV1/api/getAdminHomePage\" method=\"get\">"
+					html_string = html_string + "<form action=\"/api/getAdminHomePage\" method=\"get\">"
 							+ "<input type=\"submit\" value=\"Back\">"
 							+ "</form><br>";
 					
@@ -608,7 +650,7 @@ public class AdminController {
 						String acc_status = ua.getStatus().getStatus();
 						String acc_type = ua.getType().getType();
 						
-						html_string = html_string + "<form name=\"acc\" action=\"/FinalProjectV1/api/adminUpdateAccount\" method\"post\">"
+						html_string = html_string + "<form name=\"acc\" action=\"/api/adminUpdateAccount\" method\"post\">"
 								+ "<input type=\"text\" value=\"ACCOUNT: \" readonly>"
 								+ "<input type=\"text\" name = \"account_id\" value=\""+ account_id + "\" readonly>"
 								+ "<input type=\"text\" name = \"balance\" value=\""+balance+"\">"

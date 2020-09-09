@@ -19,7 +19,8 @@ public class HomeController {
 
 		if(request.getSession(false) == null) {
 			response.setStatus(401);
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			request.getRequestDispatcher("/Login.html").forward(request, response);
 		} 
 		
 		else {
@@ -44,7 +45,8 @@ public class HomeController {
 
 	public static void getLoginPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(request.getSession(false) != null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/home");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/home");
+			getHomePage(request,response);
 		}
 		else {
 			request.getRequestDispatcher("/Login.html").forward(request, response);
@@ -54,7 +56,8 @@ public class HomeController {
 
 	public static void getFailedLoginPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(request.getSession(false) != null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/home");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/home");
+			getHomePage(request,response);
 		}
 		else {
 			response.setStatus(400);
@@ -64,7 +67,8 @@ public class HomeController {
 	
 	public static void getCreateAccountPage(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException {
 		if(request.getSession(false) != null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/home");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/home");
+			getHomePage(request,response);
 		}
 		else {
 			request.getRequestDispatcher("/CreateAccount.html").forward(request, response);
@@ -73,7 +77,8 @@ public class HomeController {
 	
 	public static void getFailedCreateAccountPage(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException {
 		if(request.getSession(false) != null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/home");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/home");
+			getHomePage(request,response);
 		}
 		else {
 			response.setStatus(400);
@@ -83,7 +88,8 @@ public class HomeController {
 	
 	public static void getOpenAccountPage(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			getLoginPage(request,response);
 		}
 		else {
 			request.getRequestDispatcher("/OpenAccountPage.html").forward(request, response);
@@ -92,7 +98,8 @@ public class HomeController {
 	
 	public static void getCheckAccountsPage(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			getLoginPage(request,response);
 		}
 		else {
 			//request.getRequestDispatcher("/CheckAccountsPage.html").forward(request, response);
@@ -106,7 +113,7 @@ public class HomeController {
 			
 			String html_string = "<head>" + 
 					"<title>BoA Check Accounts</title>" + 
-					"<link rel=\"stylesheet\" href=\"file:///Users/MasterKashani/Documents/FinalProjectV1/src/main/webapp/first.css\" type=\"text/css\"/>" + 
+					AdminController.styleCss() +
 					"</head>" + 
 					"<body>"
 					+ "<div>";
@@ -121,7 +128,7 @@ public class HomeController {
 			
 			List<Account> la = bank.readAllUsersAccounts(username);
 			
-			html_string = html_string + "<form action=\"/FinalProjectV1/api/home\" method=\"post\">"
+			html_string = html_string + "<form action=\"/api/home\" method=\"post\">"
 					+ "<input type=\"submit\" value=\"Back\">"
 					+ "</form>";
 			
@@ -138,7 +145,7 @@ public class HomeController {
 					String acc_status = a.getStatus().getStatus();
 					//html_string = html_string + "<p>Account #: " + id + "; Balance: " + balance + "; Account Type: " + acc_type + "; Account Status: " + acc_status + "</p>";
 					
-					html_string = html_string + "<form name=\"acc\" action=\"/FinalProjectV1/api/selectAccount\" method=\"post\">"
+					html_string = html_string + "<form name=\"acc\" action=\"/api/selectAccount\" method=\"post\">"
 							+ "<label for=\"accnum\">Account #: </label>"
 							+ "<input type=\"text\" name=\"accnum\" value=\"" + id +"\" readonly>"
 							+ "<br>"  
@@ -167,9 +174,10 @@ public class HomeController {
 	}
 	
 	
-	public static void createNewAccountChecking(HttpServletRequest request, HttpServletResponse response) throws IOException  {
+	public static void createNewAccountChecking(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException  {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			getLoginPage(request, response);
 		}
 		else {
 			String b = request.getParameter("balance");
@@ -194,9 +202,10 @@ public class HomeController {
 		}
 	}
 	
-	public static void createNewAccountSavings(HttpServletRequest request, HttpServletResponse response) throws IOException  {
+	public static void createNewAccountSavings(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException  {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			getLoginPage(request,response);
 		}
 		else {
 			String b = request.getParameter("balance");
@@ -220,9 +229,10 @@ public class HomeController {
 		}
 	}
 	
-	public static void selectAccount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public static void selectAccount(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			getLoginPage(request,response);
 		}
 		else if(!((String)request.getParameter("accstatus")).equals("open")){
 //			response.getWriter().write("<div>"
@@ -251,7 +261,7 @@ public class HomeController {
 			
 			String html_string = "<head>" + 
 					"<title>BoA Select Account</title>" + 
-					"<link rel=\"stylesheet\" href=\"file:///Users/MasterKashani/Documents/FinalProjectV1/src/main/webapp/first.css\" type=\"text/css\"/>" + 
+					AdminController.styleCss() +
 					"</head>" + 
 					"<body>"
 					+ "<div>";
@@ -265,7 +275,7 @@ public class HomeController {
 			// Deposit, Withdraw, Transfer, Close, Back
 
 			
-			html_string = html_string + "<form action=\"/FinalProjectV1/api/deposit\" method=\"post\"> <input type=\"submit\" value=\"Deposit\"> <input type=\"text\" name=\"amount\" placeholder=\"amount\"> </form>"
+			html_string = html_string + "<form action=\"/api/deposit\" method=\"post\"> <input type=\"submit\" value=\"Deposit\"> <input type=\"text\" name=\"amount\" placeholder=\"amount\"> </form>"
 					+ "<form action=\"/FinalProjectV1/api/withdraw\" method=\"post\"><input type=\"submit\" value=\"Withdraw\"><input type=\"text\" name=\"amount\" placeholder=\"amount\"></form>"
 					+ "<form action=\"/FinalProjectV1/api/transfer\" method=\"post\"><input type=\"submit\" value=\"Transfer\"><input type=\"text\" name=\"amount\" placeholder=\"amount\"><input type=\"text\" name=\"otherAccount\" placeholder=\"other account #\"></form>"
 					+ "<form action=\"/FinalProjectV1/api/close\" method=\"post\"><input type=\"submit\" value=\"Close\"></form>"
@@ -278,9 +288,10 @@ public class HomeController {
 		}
 	}
 	
-	public static void getEditInfoPage(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public static void getEditInfoPage(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			getLoginPage(request,response);
 		}
 		else {
 			try {
@@ -294,13 +305,13 @@ public class HomeController {
 				//String html_string = "<div>";
 				
 				String html_string = "<head>" + 
-						"<title>BoA Edit Profile</title>" + 
-						"<link rel=\"stylesheet\" href=\"file:///Users/MasterKashani/Documents/FinalProjectV1/src/main/webapp/first.css\" type=\"text/css\"/>" + 
+						"<title>BoA Edit Profile</title>" 
+						+ AdminController.styleCss() +
 						"</head>" + 
 						"<body>"
 						+ "<div>";
 				
-				html_string = html_string + "<form action=\"/FinalProjectV1/api/home\" method=\"get\">"
+				html_string = html_string + "<form action=\"/api/home\" method=\"get\">"
 						+ "<input type=\"submit\" value=\"Back\">"
 						+ "</form><br>";
 				
@@ -316,7 +327,7 @@ public class HomeController {
 				
 				
 			
-				html_string = html_string + "<form name=\"user\" action=\"/FinalProjectV1/api/editInfo\" method\"post\">"
+				html_string = html_string + "<form name=\"user\" action=\"/api/editInfo\" method\"post\">"
 						+ "<input type=\"text\" value=\"USER: \" readonly>"
 						+ "<input type=\"text\" name = \"user_id\" value=\""+ user_id + "\" readonly>"
 						+ "<input type=\"text\" name = \"username\" value=\""+username+"\" readonly>"
@@ -341,9 +352,10 @@ public class HomeController {
 		}
 	}
 	
-	public static void editInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public static void editInfo(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		if(request.getSession(false) == null) {
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			getLoginPage(request,response);
 		}
 		else {
 			try {

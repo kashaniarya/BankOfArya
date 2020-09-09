@@ -21,7 +21,8 @@ public class LoginController {
 		if(!request.getMethod().equals("POST")) {
 			
 			//System.out.println("That's a" + request.getMethod() + " method, invalid method");
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request,response);
 			
 		}
 		else {
@@ -52,8 +53,8 @@ public class LoginController {
 //				else {
 //					response.sendRedirect("http://localhost:8080/FinalProjectV1/api/home");
 //				}
-				response.sendRedirect("http://localhost:8080/FinalProjectV1/api/home");
-				
+				//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/home");
+				HomeController.getHomePage(request, response);
 				
 			}
 			else {
@@ -66,10 +67,11 @@ public class LoginController {
 	
 	
 
-	public static void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public static void logout(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		request.getSession().invalidate();
 		
-		response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+		//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+		HomeController.getLoginPage(request, response);
 		
 	}
 	
@@ -91,8 +93,8 @@ public class LoginController {
 			
 			//System.out.println("That's a" + request.getMethod() + " method, invalid method");
 			
-			response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
-			
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/");
+			HomeController.getLoginPage(request, response);
 		}
 		else {
 			// create account 
@@ -125,7 +127,8 @@ public class LoginController {
 					
 					response.setStatus(300);
 					
-					response.sendRedirect("http://localhost:8080/FinalProjectV1/api/home");
+					//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/home");
+					HomeController.getHomePage(request, response);
 				
 				}
 				else {
