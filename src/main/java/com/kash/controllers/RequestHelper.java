@@ -28,23 +28,23 @@ public static void process(HttpServletRequest request, HttpServletResponse respo
 		*/
 		//System.out.println("s: "+ s);
 		switch(s) {
-			case "/FinalProjectV1/api/login":
+			case "/api/login":
 				LoginController.login(request,response);
 				break;
 				
-			case "/FinalProjectV1/api/logout":
+			case "/api/logout":
 				LoginController.logout(request,response);
 				break;
 				
-			case "/FinalProjectV1/api/home":
+			case "/api/home":
 				HomeController.getHomePage(request,response);				
 				break;
 				
-			case "/FinalProjectV1/api/failedlogin":
+			case "/api/failedlogin":
 				HomeController.getFailedLoginPage(request, response);
 				break;
 				
-			case "/FinalProjectV1/api/createAccountPage":
+			case "/api/createAccountPage":
 				HomeController.getCreateAccountPage(request,response);
 				break;
 				
