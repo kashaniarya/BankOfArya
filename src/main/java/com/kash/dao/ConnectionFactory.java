@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConnectionFactory {
 	//private static String url = "jdbc:postgresql://localhost/postgres";
-	private static String url = "jdbc:postgres://ec2-3-223-9-166.compute-1.amazonaws.com/postgres";
+	private static String url = "jdbc:postgressql://ec2-3-223-9-166.compute-1.amazonaws.com/postgres";
 	private static String username = "qwptitazckhyhv";//"postgres";
 	private static String password = "15dcdb59f1d05fc7e02a12f0bc504873ebfebb5b0d7c643988aaf38b7b7e6023";//"p";
 	
