@@ -144,9 +144,14 @@ public static void process(HttpServletRequest request, HttpServletResponse respo
 			case "/api/editInfo":
 				HomeController.editInfo(request,response);
 				break;
+				
+			case "/api/":
+				HomeController.getLoginPage(request,response);
+				break;
 	
 			default:
-				HomeController.getLoginPage(request,response);
+				//HomeController.getLoginPage(request,response);
+				request.getRequestDispatcher("/Main.html").forward(request, response);
 				break;
 			
 		}
