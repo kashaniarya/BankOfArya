@@ -53,6 +53,18 @@ public class HomeController {
 		}
 		
 	}
+	
+	public static void getMainPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if(request.getSession(false) != null) {
+			//response.sendRedirect("http://localhost:8080/FinalProjectV1/api/home");
+			getHomePage(request,response);
+		}
+		else {
+			//request.getRequestDispatcher("/Login.html").forward(request, response);
+			request.getRequestDispatcher("/Main.html").forward(request, response);
+		}
+		
+	}
 
 	public static void getFailedLoginPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(request.getSession(false) != null) {

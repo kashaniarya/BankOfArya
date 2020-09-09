@@ -27,7 +27,7 @@ public class LoginController {
 		}
 		else {
 			
-			String username = request.getParameter("user");
+			String username = request.getParameter("user").toLowerCase();
 			String pass = request.getParameter("pass");
 			
 			BankDao bank = new BankDaoImpl();
