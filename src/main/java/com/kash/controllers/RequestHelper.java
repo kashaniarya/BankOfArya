@@ -145,12 +145,12 @@ public static void process(HttpServletRequest request, HttpServletResponse respo
 				HomeController.editInfo(request,response);
 				break;
 				
-			case "/api":
-				HomeController.getLoginPage(request,response);
-				break;
+//			case "/api":
+//				HomeController.getLoginPage(request,response);
+//				break;
 	
 			default:
-				HomeController.getCreateAccountPage(request,response);
+				HomeController.getLoginPage(request,response);
 				//request.getRequestDispatcher("/Main.html").forward(request, response);
 				break;
 			
