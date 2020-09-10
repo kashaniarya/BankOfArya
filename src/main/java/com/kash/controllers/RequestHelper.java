@@ -18,21 +18,14 @@ public class RequestHelper {
 		String s = request.getRequestURI();
 		//System.out.println(s);
 		
-		
-		/*
-		System.out.println("asg: ");
-		String[] str = s.split("/");
-		for (String i : str) {
-			System.out.println(i);
-		}
-		*/
+
 		//System.out.println("s: "+ s);
 		switch(s) {
 			case "/":
 				HomeController.getMainPage(request, response);
 				break;
 				
-			case "/api":
+			case "/getLoginPage":
 				HomeController.getLoginPage(request, response);
 				break;
 		
@@ -157,9 +150,7 @@ public class RequestHelper {
 			
 	
 			default:
-				HomeController.getMainPage(request,response);
-				//request.getRequestDispatcher("/Main.html").forward(request, response);
-				//HomeController.getMainPage(request,response);
+				HomeController.getLoginPage(request,response);
 				break;
 			
 		}
