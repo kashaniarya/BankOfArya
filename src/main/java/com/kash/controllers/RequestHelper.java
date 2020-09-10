@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 public class RequestHelper {
-public static void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, InvalidRoleException {
+	public static void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, InvalidRoleException {
 		
 	
 		String s = request.getRequestURI();
@@ -28,6 +28,10 @@ public static void process(HttpServletRequest request, HttpServletResponse respo
 		*/
 		//System.out.println("s: "+ s);
 		switch(s) {
+			case "/":
+				HomeController.getMainPage(request, response);
+				break;
+		
 			case "/api/login":
 				LoginController.login(request,response);
 				break;
@@ -145,13 +149,8 @@ public static void process(HttpServletRequest request, HttpServletResponse respo
 				HomeController.editInfo(request,response);
 				break;
 				
-//			case "/api":
-//				HomeController.getLoginPage(request,response);
-//				break;
-//				
-//			case "/api/":
-//				HomeController.getLoginPage(request,response);
-//				break;
+
+			
 	
 			default:
 				HomeController.getLoginPage(request,response);
