@@ -47,7 +47,7 @@ public class MainController {
 		}
 		else {
 			//request.getRequestDispatcher("/Login.html").forward(request, response);
-			request.getRequestDispatcher("/Courework.html").forward(request, response);
+			request.getRequestDispatcher("/Coursework.html").forward(request, response);
 		}
 	}
 	
