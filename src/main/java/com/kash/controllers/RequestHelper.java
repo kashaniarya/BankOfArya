@@ -31,6 +31,10 @@ public class RequestHelper {
 			case "/":
 				HomeController.getMainPage(request, response);
 				break;
+				
+			case "/api":
+				HomeController.getLoginPage(request, response);
+				break;
 		
 			case "/api/login":
 				LoginController.login(request,response);
@@ -153,7 +157,7 @@ public class RequestHelper {
 			
 	
 			default:
-				HomeController.getLoginPage(request,response);
+				HomeController.getMainPage(request,response);
 				//request.getRequestDispatcher("/Main.html").forward(request, response);
 				//HomeController.getMainPage(request,response);
 				break;
