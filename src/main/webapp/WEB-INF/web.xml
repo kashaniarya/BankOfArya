@@ -18,7 +18,18 @@
   
   <servlet-mapping>
     <servlet-name>MasterServlet</servlet-name>
-    <url-pattern></url-pattern>
+    <url-pattern>/api/*</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <display-name>MainServlet</display-name>
+    <servlet-name>MainServlet</servlet-name>
+    <servlet-class>main.java.com.kash.servlet.MainServlet</servlet-class> 
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>MainServlet</servlet-name>
+    <url-pattern>/main/*</url-pattern>
   </servlet-mapping>
   
 

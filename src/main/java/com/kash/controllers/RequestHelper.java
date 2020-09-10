@@ -21,13 +21,7 @@ public class RequestHelper {
 
 		//System.out.println("s: "+ s);
 		switch(s) {
-			case "/":
-				HomeController.getMainPage(request, response);
-				break;
-				
-			case "/getLoginPage":
-				HomeController.getLoginPage(request, response);
-				break;
+
 		
 			case "/api/login":
 				LoginController.login(request,response);
