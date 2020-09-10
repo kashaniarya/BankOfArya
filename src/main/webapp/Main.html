@@ -1,15 +1,130 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Arya Kashani</title>
+	<meta charset="UTF-8">
+	<title>Arya Kashani</title>
+	<style type="text/css">
+		@charset "UTF-8";
+
+		*{
+		    padding: 5px; border: 10px; margin: 2px; 
+		    box-sizing: border-box;
+		    list-style-type: none; 
+		    text-decoration: none;
+		    color: black;
+		    overflow: auto;
+		    text-align: center;
+		}
+		
+		body{
+		    background-image: linear-gradient(rgb(0,0,250) , rgb(0,200,100));
+		    overflow: hidden;
+		    border-width: 10px;
+			border-style: solid;
+			border-color: rgb(0,150,150);
+		}
+		/*
+		div {
+			background-color: linear-gradient(red,yellow);
+		}
+		
+		h1 {
+			background-color: rgb(50,150,0);
+			
+		}
+		*/
+		form {
+			float: left;
+		}
+		
+		input.inputasbutton {
+			height: 60px;
+			wdith: 120px;
+			border-width: 3px;
+			border-style: solid;
+			border-color: rgb(100,0,0);
+			background-color: rgb(210,0,0);
+			padding: 5px;
+			margin: 10px;
+			font-size: medium;
+			font-weight: bold;
+			
+		}
+		
+		textarea {
+			background-color: yellow;
+		}
+		
+		li {
+			color: white;
+			float: left;
+			text-align: center;
+		}
+		
+		
+		
+	
+	</style>
 </head>
 <body>
+	<header>
+		<nav>
+			<ul>
+				<li>Home</li>
+				<li>Experience</li>
+				<li>Tech Skills</li>
+				<li>Coursework</li>
+			</ul>
+		</nav>
+	</header>
 	<div>
+		<br>
 		<h1>Welcome to my Portfolio Website by Arya Kashani</h1>
-		<form action="/api/" method="post">
-			<input type="submit" value="Bank of Arya">
-		</form>
+		<br>
+		<br>
+		
+		<div>
+			<h2>Web Applications created by me</h2>
+			<form action="/api/" method="get">
+				<input class="inputasbutton" type="submit" value="Bank of Arya">
+				<br>
+				<textarea readonly>A Java Web App that uses Maven, Apache Tomcat, Java Servlets, Postgres Database, and HTML/CSS</textarea>
+			</form>
+			<form action="/main/" method="get">
+				<input class="inputasbutton" type="submit" value="MNF">
+				<br>
+				<textarea readonly>A website I made for my brother</textarea>
+			</form>
+		</div>
+		
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		
+		<div class="reddiv">
+			<h2>Flutter Applications released to ios App Store</h2>
+			<br>
+			<br>
+			<br>
+			<br>
+		</div>
+		
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		
+		<div>
+			<h2>Data Science Projects implementing Neural Networks</h2>
+			<br>
+			<br>
+			<br>
+			<br>
+		</div>
+		
 	</div>
 </body>
 </html>
