@@ -13,6 +13,8 @@ public class RequestHelperTwo {
 		
 		
 		String s = request.getRequestURI();
+		
+		
 
 		switch(s) {
 			default:

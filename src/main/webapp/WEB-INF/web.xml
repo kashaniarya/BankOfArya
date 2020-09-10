@@ -40,11 +40,6 @@
   
   <servlet-mapping>
     <servlet-name>BlankServlet</servlet-name>
-    <url-pattern>/</url-pattern>
-  </servlet-mapping>
-  
-  <servlet-mapping>
-    <servlet-name>BlankServlet</servlet-name>
     <url-pattern></url-pattern>
   </servlet-mapping>
 
