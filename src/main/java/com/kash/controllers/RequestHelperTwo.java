@@ -29,7 +29,7 @@ public class RequestHelperTwo {
 				MainController.getTechSkillsPage(request,response);
 				break;
 				
-			case "/main/courework":
+			case "/main/coursework":
 				MainController.getCourseworkPage(request,response);
 				break;
 		
