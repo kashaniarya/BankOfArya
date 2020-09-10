@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Coursework Arya Kashani</title>
+	<style type="text/css">
+		*{
+		    padding: 5px; border: 10px; margin: 2px; 
+		    box-sizing: border-box;
+		    list-style-type: none; 
+		    text-decoration: none;
+		    color: black;
+		    overflow: auto;
+		    text-align: center;
+		}
+		
+		body{
+		    background-image: linear-gradient(to bottom right, purple, cyan, green);
+ 		    border-width: 10px;
+			border-style: solid;
+			border-color: rgb(0,150,150);
+		}
+		
+		button {
+			color: white;
+			background-color: transparent;
+			text-decoration: underline;
+		}
+		
+		button.current {
+			color: pink;
+			background-color: transparent;
+			text-decoration: underline;
+		}
+		
+		li {
+			float: left;
+			text-align: center;
+			
+		} 
+		
+		form {
+			display: inline-block;
+			margin: 10px;
+		}
+		
+		textarea {
+			resize: none;
+			height: 200px;
+			width: 300px;
+		}
+		
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><form action="/main"><button type="submit">Home</button></form></li>
+				<li><form action="/experience"><button type="submit">Experience</button></form></li>
+				<li><form action="/techskills"><button type="submit">Tech Skills</button></form></li>
+				<li><form><button class="current" type="submit">Coursework</button></form></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<div>
+		<form><textarea readonly>UCI Classes (completed)</textarea></form>
+		<form><textarea readonly>Certificates (studying to attain)</textarea></form>
+		<br>
+		<form><textarea readonly>Udemy Courses (completed)</textarea></form>
+		<form><textarea readonly>Udemy Courses (in progress)</textarea></form>
+		<form><textarea readonly>Udemy Courses (in future)</textarea></form>
+	</div>
+</body>
+</html>

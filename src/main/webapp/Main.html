@@ -17,9 +17,9 @@
 		}
 		
 		body{
-		    background-image: linear-gradient(rgb(0,0,250) , rgb(0,200,100));
-		    overflow: hidden;
-		    border-width: 10px;
+		    background-image: linear-gradient(to bottom right, blue, green);
+/* 		    overflow: auto;
+ */		    border-width: 10px;
 			border-style: solid;
 			border-color: rgb(0,150,150);
 		}
@@ -34,7 +34,10 @@
 		}
 		*/
 		form {
-			float: left;
+/* 			float: left;
+ *//* 			margin-left: 100px;
+ */			display: inline-block;
+ 			margin: 35px;
 		}
 		
 		input.inputasbutton {
@@ -43,7 +46,21 @@
 			border-width: 3px;
 			border-style: solid;
 			border-color: rgb(100,0,0);
-			background-color: rgb(210,0,0);
+			background-color: red;
+			padding: 5px;
+			margin: 10px;
+			font-size: medium;
+			font-weight: bold;
+			
+		}
+		
+		input.inputasbutton2 {
+			height: 60px;
+			wdith: 120px;
+			border-width: 3px;
+			border-style: solid;
+			border-color: rgb(100,0,0);
+			background-color: green;
 			padding: 5px;
 			margin: 10px;
 			font-size: medium;
@@ -53,16 +70,71 @@
 		
 		textarea {
 			background-color: yellow;
+			resize: none;
 		}
 		
 		li {
-			color: white;
 			float: left;
 			text-align: center;
+			
+		}
+		
+		button {
+			color: white;
+			background-color: transparent;
+			text-decoration: underline;
+		}
+		
+		img {
+			height: 150px;
+			width: 150px;
+			background-color: white;
+		}
+		
+		textarea.summary {
+			background-color: rgb(0,200,10);
+		}
+		
+		button.current {
+			color: pink;
+			background-color: transparent;
+			text-decoration: underline;
+		}
+		
+		div.webapps {
+			background-image: radial-gradient(orange, pink, magenta);
+		}
+		
+		div.flutter {
+			 background-image: linear-gradient(to right, purple, pink);
 		}
 		
 		
+		div.nn {
+			background-image: linear-gradient(to bottom right, cyan, magenta);
+		}
 		
+		textarea.nnta {
+			background-color: orange;
+			resize: none;
+			margin-vertical: 40px;
+			padding: 20px;
+			text-align: center;
+			overflow: hidden;
+			
+		}
+		
+		textarea.nnta2 {
+			background-color: teal;
+			resize: none;
+			margin-vertical: 40px;
+			padding: 20px;
+			text-align: center;
+			overflow: hidden;
+			color: white;
+		}
+		
+
 	
 	</style>
 </head>
@@ -70,30 +142,33 @@
 	<header>
 		<nav>
 			<ul>
-				<li>Home</li>
-				<li>Experience</li>
-				<li>Tech Skills</li>
-				<li>Coursework</li>
+				<li><form><button class="current" type="submit">Home</button></form></li>
+				<li><form action="/experience"><button type="submit">Experience</button></form></li>
+				<li><form action="/techskills"><button type="submit">Tech Skills</button></form></li>
+				<li><form action="/coursework"><button type="submit">Coursework</button></form></li>
 			</ul>
 		</nav>
 	</header>
 	<div>
 		<br>
-		<h1>Welcome to my Portfolio Website by Arya Kashani</h1>
+		<div>
+			<h1>Welcome to my Portfolio Website by Arya Kashani</h1>
+		</div>
+		
 		<br>
 		<br>
 		
-		<div>
+		<div class="webapps">
 			<h2>Web Applications created by me</h2>
 			<form action="/api/" method="get">
 				<input class="inputasbutton" type="submit" value="Bank of Arya">
 				<br>
-				<textarea readonly>A Java Web App that uses Maven, Apache Tomcat, Java Servlets, Postgres Database, and HTML/CSS</textarea>
+				<textarea rows="5" readonly>A Java Web App that uses Maven, Apache Tomcat, Java Servlets, Postgres Database, and HTML/CSS</textarea>
 			</form>
 			<form action="/main/" method="get">
-				<input class="inputasbutton" type="submit" value="MNF">
+				<input class="inputasbutton2" type="submit" value="MNF">
 				<br>
-				<textarea readonly>A website I made for my brother</textarea>
+				<textarea rows="5" readonly>A website I made for my brother</textarea>
 			</form>
 		</div>
 		
@@ -103,8 +178,39 @@
 		<br>
 		<br>
 		
-		<div class="reddiv">
-			<h2>Flutter Applications released to ios App Store</h2>
+		<div class="flutter">
+			<h2>Flutter Applications (not yet) released to ios App Store</h2>
+				<form>
+					<img>
+					<br>
+					<textarea readonly>Bar Buddy</textarea>
+					<br>
+					<textarea class="summary" readonly>summary</textarea>
+				</form>
+				
+				<form>
+					<img>
+					<br>
+					<textarea readonly>Locate Loved Ones</textarea>
+					<br>
+					<textarea class="summary" readonly>summary</textarea>
+				</form>
+				
+				<form>
+					<img>
+					<br>
+					<textarea readonly>Bball Pickup</textarea>
+					<br>
+					<textarea class="summary" readonly>summary</textarea>
+				</form>
+				
+				<form>
+					<img>
+					<br>
+					<textarea readonly>iBusiness Cards</textarea>
+					<br>
+					<textarea class="summary" readonly>summary</textarea>
+				</form>
 			<br>
 			<br>
 			<br>
@@ -117,8 +223,20 @@
 		<br>
 		<br>
 		
-		<div>
+		<div class="nn">
 			<h2>Data Science Projects implementing Neural Networks</h2>
+			<form>
+				<textarea rows="3" cols="20" class="nnta" readonly>Tron: Reinforcement Learning Neural Network</textarea>
+				<br>
+				<textarea rows="10" cols="30" class="nnta2" readonly>summary</textarea>
+				<textarea rows="10" cols="30" class="nnta2" readonly>summary pt.2</textarea>
+			</form>
+			<form>
+				<textarea rows="3" cols="20" class="nnta" readonly>IMG Classification Neural Network identifying Metastatic Tissue</textarea>
+				<br>
+				<textarea rows="10" cols="30" class="nnta2" readonly>summary</textarea>
+				<textarea rows="10" cols="30" class="nnta2" readonly>summary pt.2</textarea>
+			</form>
 			<br>
 			<br>
 			<br>
