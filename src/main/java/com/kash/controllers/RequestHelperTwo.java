@@ -17,19 +17,19 @@ public class RequestHelperTwo {
 		
 
 		switch(s) {
-			case "/main":
-				MainController.getMainPage(request,response);
-				break;
+//			case "/main":
+//				MainController.getMainPage(request,response);
+//				break;
 				
-			case "/experience":
+			case "/main/experience":
 				MainController.getExperiencePage(request,response);
 				break;
 				
-			case "/techskills":
+			case "/main/techskills":
 				MainController.getTechSkillsPage(request,response);
 				break;
 				
-			case "/courework":
+			case "/main/courework":
 				MainController.getCourseworkPage(request,response);
 				break;
 		
