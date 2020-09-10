@@ -32,6 +32,21 @@
     <url-pattern>/main/*</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <display-name>BlankServlet</display-name>
+    <servlet-name>BlankServlet</servlet-name>
+    <servlet-class>main.java.com.kash.servlet.BlankServlet</servlet-class> 
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>BlankServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>BlankServlet</servlet-name>
+    <url-pattern></url-pattern>
+  </servlet-mapping>
 
   
 </web-app>
