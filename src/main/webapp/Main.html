@@ -132,6 +132,14 @@
 			text-align: center;
 			overflow: hidden;
 			color: white;
+			overflow: auto;
+			height: 300px;
+			width: 300px;
+		}
+		
+		a {
+			text-decoration: underline;
+			color: red;
 		}
 		
 
@@ -160,7 +168,7 @@
 		
 		<div class="webapps">
 			<h2>Web Applications created by me</h2>
-			<p>click on name to go to site</p>
+			<p>(click on name to go to site)</p>
 			<form action="/api/" method="get">
 				<input class="inputasbutton" type="submit" value="Bank of Arya">
 				<br>
@@ -229,14 +237,18 @@
 			<form>
 				<textarea rows="3" cols="20" class="nnta" readonly>Tron: Reinforcement Learning Neural Network</textarea>
 				<br>
-				<textarea rows="10" cols="30" class="nnta2" readonly>summary</textarea>
-				<textarea rows="10" cols="30" class="nnta2" readonly>summary pt.2</textarea>
+				<a href="https://github.com/kashaniarya/team-tron-rl/blob/master/Project_Report.pdf">Article on Github</a>
+				<br>
+				<textarea rows="10" cols="30" class="nnta2" readonly>Tron is a game with 4 players on a board whose character moves like a snake until the board is completely covered or there is only one player left alive. The game can be with 4 single players or two teams of two players. In our instance, the board is a 25x25 grid. Our objective was to implement a Reinforcement Learning Neural Network that would quickly learn to not only win the game, but play the game intelligently.</textarea>
+				<textarea rows="10" cols="30" class="nnta2" readonly>For our initial neural network architecture, we created a sequential neural network using the keras library. For our final neural network architecture, we used a Deep Q-Network to learn a policy for each team and have a multi-agent version of Tron exhibiting some form of intelligent team-play. We were successfully able to create Neural Networks that taught a player to win every time during single player and teams to win the majority of the time for team games.</textarea>
 			</form>
 			<form>
 				<textarea rows="3" cols="20" class="nnta" readonly>IMG Classification Neural Network identifying Metastatic Tissue</textarea>
 				<br>
-				<textarea rows="10" cols="30" class="nnta2" readonly>summary</textarea>
-				<textarea rows="10" cols="30" class="nnta2" readonly>summary pt.2</textarea>
+				<a href="https://github.com/kashaniarya/NeuralNetworkUciTeam/blob/master/Final_Project_Report.pdf">Article on Github</a>
+				<br>
+				<textarea rows="10" cols="30" class="nnta2" readonly>Patch Camelyon is a dataset consisting of histopathologic scans of lymph nodes. These images have 10 binary labels for whether cancer tissue is present or not. The dataset overall contained 327,680 images, about 8 GB of data. We chose to do an 80/10/10 split 18 so the training data size was 262,144 images while the validation and test sets had 32,768 images. We tried various different preprocessing and augmentation methods: random rotation and flipping, gaussian noise, randomly reducing the jpeg quality, cropping the outside of the image, grayscaling the images, taking the Sobel edges or getting the edge gradients, and various combination of these methods.</textarea>
+				<textarea rows="10" cols="30" class="nnta2" readonly>A typical convolutional neural network has two parts, a convolutional base and a classifier. Model 1 is a convolutional neural network composed of a stack of convolutional and max pooling layers with a ReLU classifier. Model 4 is a convolutional neural network on Sobel edges that uses SELU activation function. Model 4 was our best result with a training and AUC score of 96% and a validation and training score of 89%.</textarea>
 			</form>
 			<br>
 			<br>
