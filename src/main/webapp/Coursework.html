@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<title>Coursework Arya Kashani</title>
 	<style type="text/css">
 		*{
@@ -33,11 +37,6 @@
 			text-decoration: underline;
 		}
 		
-		li {
-			float: left;
-			text-align: center;
-			
-		} 
 		
 		form {
 			display: inline-block;
@@ -51,28 +50,49 @@
 			font-weight: bold;
 			font-size: large;
 		}
+
+		.active {
+			text-decoration: underline;
+		}
+
+		#nava {
+			font-size: x-large;
+		}
+
+		#face {
+			font-size: 50px;
+			font-weight: bold;
+		}
 		
 	</style>
 </head>
 <body>
 	<header>
-		<nav>
-			<ul>
-				<li><form action="/main"><button type="submit">Home</button></form></li>
-				<li><form action="/main/experience"><button type="submit">Experience</button></form></li>
-				<li><form action="/main/techskills"><button type="submit">Tech Skills</button></form></li>
-				<li><form><button class="current" type="submit">Coursework</button></form></li>
-			</ul>
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" id="face" href="./Main.html">Arya Kashani</a>
+		    </div>
+		    <ul class="nav navbar-nav">
+		      <li><a id="nava" href="./Main.html">Home</a></li>
+		      <li><a id="nava" href="./Experience.html">Experience</a></li>
+		      <li><a id="nava" href="./Techskills.html">Tech Skills</a></li>
+		      <li class="active"><a id="nava" href="./Coursework.html">Courses</a></li>
+		    </ul>
+		  </div>
 		</nav>
 	</header>
 	
 	<div>
 		<form><textarea readonly>UCI Classes (completed) &#10 &#10 Machine Learning & Data Mining &#10 Deep Learning & Neural Networks &#10 Next Generation Search Systems &#10 Applied Probablity & Statistics in CS &#10 Design & Analysis of Algorithms &#10 Information Retrieval &#10 Compiler Design &#10 Principles of Operating Systems &#10 Formal Languages & Automata Theory &#10 Data Structures &#10 Abstract Data Types &#10 Computer Systems & Assembly Language &#10 Comparative Programming Languages &#10 Edge Computing &#10 Artificial Intelligence &#10</textarea></form>
-		<form><textarea readonly>Certificates (studying to attain) &#10 &#10 &#10 Oracle Certified Java Associate (CJA) &#10 &#10 &#10 CompTIA A+ &#10 &#10</textarea></form>
+		<form><textarea readonly>Certificates (studying to attain) &#10 &#10 &#10 Oracle Java Associate (OJA) &#10 &#10 AWS Certified Cloud Practioner &#10 &#10 CompTIA A+ &#10 &#10 </textarea></form>
 		<br>
 		<form><textarea readonly>Udemy Courses (completed) &#10 &#10 Machine Learning, Data Science, and Deep Learning &#10 &#10 iOS Application Bootcamp &#10 &#10 ML: Reinforcement Learning in Python &#10</textarea></form>
 		<form><textarea readonly>Udemy Courses (in progress) &#10 &#10 React &#10 Flutter &#10</textarea></form>
 		<form><textarea readonly>Udemy Courses (in future) &#10 &#10 AWS &#10 Cyber Security &#10 Node.js &#10 ASP.NET &#10 Complete Networking Fundamentals &#10</textarea></form>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>
